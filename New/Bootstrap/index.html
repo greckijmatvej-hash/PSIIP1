@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carent – Car Rental Service | Bootstrap + Widgets</title>
+
+    <!-- Bootstrap 5 CSS + Icons + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Подключаем внешний кастомный CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================= TOAST-УВЕДОМЛЕНИЕ (ВИДЖЕТ) ======================= -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="welcomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
+        <div class="toast-header bg-warning text-dark">
+            <i class="fas fa-car me-2"></i>
+            <strong class="me-auto">Carent</strong>
+            <small>Только что</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+        </div>
+        <div class="toast-body">
+            🚗 Добро пожаловать в Carent! Арендуйте авто мечты по лучшим ценам.
+        </div>
+    </div>
+</div>
+
+<!-- ======================= НАВИГАЦИЯ ======================= -->
+<nav class="navbar navbar-expand-lg bg-white py-3 border-bottom">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-2 logo-orange" href="#">Carent</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Booking</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">Cars</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">SUVs</a></li>
+                        <li><a class="dropdown-item" href="#">Sedans</a></li>
+                        <li><a class="dropdown-item" href="#">Electric</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">All vehicles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Contacts</a></li>
+                <li class="nav-item">
+                    <a class="btn btn-custom-orange ms-lg-2" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login | Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero-section position-relative">
+    <div class="hero-social-sidebar">
+        <a href="#" class="hero-social-link" data-bs-toggle="tooltip" data-bs-title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hero-social-link" data-bs-toggle="tooltip" data-bs-title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hero-social-link" data-bs-toggle="tooltip" data-bs-title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hero-social-link" data-bs-toggle="tooltip" data-bs-title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#" class="hero-social-link" data-bs-toggle="tooltip" data-bs-title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-md-6">
+                <div class="hero-text">
+                    <h1 class="display-5 fw-bold mb-3">Enjoy your life with our comfortable cars</h1>
+                    <p class="lead mb-4">Carent is ready to serve the best experience in car rental.</p>
+                    <button class="btn btn-custom-orange btn-lg">Explore Now</button>
+                </div>
+            </div>
+            <div class="col-md-6 hero-image">
+                <img src="Main Picture.jpg" alt="Luxury car" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="container my-5 py-4">
+    <h2 class="section-title">About Us</h2>
+    <div class="row align-items-center g-5">
+        <div class="col-md-6">
+            <img src="Rectangle 5.jpg" alt="About car" class="img-fluid rounded-4 shadow-sm">
+        </div>
+        <div class="col-md-6">
+            <p class="fs-5 text-secondary lh-lg">We are a specialized team committed to providing reliable car rental services. One of the advantages of renting a car from us is offering competitive and transparent prices. By providing services such as comprehensive insurance ......</p>
+            <a href="#" class="text-decoration-none fw-bold read-more-link">Read More →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= BOOKING ======================= -->
+<section class="booking-bg">
+    <div class="container">
+        <h2 class="section-title">Book Now</h2>
+        <form>
+            <div class="row g-3">
+                <div class="col-md-3 col-sm-6"><select class="form-select" required><option selected disabled>Pickup Location</option><option>Main Airport</option><option>City Center</option></select></div>
+                <div class="col-md-3 col-sm-6"><input type="text" placeholder="Pickup Date" class="form-control" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"></div>
+                <div class="col-md-3 col-sm-6"><input type="text" placeholder="Return Date" class="form-control" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"></div>
+                <div class="col-md-3 col-sm-6"><select class="form-select"><option selected disabled>Car Type</option><option>SUV / Jeep</option><option>Sedan</option></select></div>
+                <div class="col-md-3 col-sm-6"><input type="text" placeholder="Pickup Time" class="form-control" onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'"></div>
+                <div class="col-md-3 col-sm-6"><input type="text" placeholder="Return Time" class="form-control" onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'"></div>
+                <div class="col-md-3 col-sm-6"><button type="submit" class="btn btn-custom-orange w-100 py-2">Book Now</button></div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- ======================= КАРУСЕЛЬ МАШИН ======================= -->
+<section class="container my-5 py-4">
+    <h2 class="section-title">Our Featured Cars</h2>
+    <div id="carsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><div class="row"><div class="col-md-4"><div class="custom-car-card"><img src="Rectangle 6.jpg" class="car-img"><h3>Jeep XD</h3><p class="text-secondary">8 seats • Diesel • SUV</p><div class="d-flex justify-content-between"><div><span class="text-secondary small">Daily rate from</span><br><span class="price-value">$200</span></div><a href="#" class="btn-book-now">Book Now</a></div></div></div><div class="col-md-4"><div class="custom-car-card"><img src="Rectangle 6-1.jpg" class="car-img"><h3>Ferrari Enzo</h3><p class="text-secondary">2 seats • Electric • Sedan</p><div class="d-flex justify-content-between"><div><span class="text-secondary small">Daily rate from</span><br><span class="price-value">$340</span></div><a href="#" class="btn-book-now">Book Now</a></div></div></div><div class="col-md-4"><div class="custom-car-card"><img src="Rectangle 6-2.jpg" class="car-img"><h3>Fiat Cooper</h3><p class="text-secondary">4 seats • Diesel • Mini coupe</p><div class="d-flex justify-content-between"><div><span class="text-secondary small">Daily rate from</span><br><span class="price-value">$167</span></div><a href="#" class="btn-book-now">Book Now</a></div></div></div></div></div>
+            <div class="carousel-item"><div class="row"><div class="col-md-4"><div class="custom-car-card"><img src="Rectangle 6.jpg" class="car-img"><h3>Range Rover</h3><p class="text-secondary">5 seats • Diesel • Luxury</p><div class="d-flex justify-content-between"><div><span class="text-secondary small">Daily rate from</span><br><span class="price-value">$450</span></div><a href="#" class="btn-book-now">Book Now</a></div></div></div><div class="col-md-4"><div class="custom-car-card"><img src="Rectangle 6-1.jpg" class="car-img"><h3>Tesla Model S</h3><p class="text-secondary">5 seats • Electric</p><div class="d-flex justify-content-between"><div><span class="text-secondary small">Daily rate from</span><br><span class="price-value">$399</span></div><a href="#" class="btn-book-now">Book Now</a></div></div></div><div class="col-md-4"><div class="custom-car-card"><img src="Rectangle 6-2.jpg" class="car-img"><h3>Mercedes G-Class</h3><p class="text-secondary">5 seats • Off-road</p><div class="d-flex justify-content-between"><div><span class="text-secondary small">Daily rate from</span><br><span class="price-value">$520</span></div><a href="#" class="btn-book-now">Book Now</a></div></div></div></div></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+    </div>
+</section>
+
+<!-- ======================= PREMIUM SERVICES ======================= -->
+<section class="services">
+    <div class="services-top-bg"><div class="container"><h2 class="text-white fs-1 fw-bold">Our Premium Services</h2><p class="text-white-50 mx-auto" style="max-width:600px;">Carent offers a wide range of useful services.</p></div></div>
+    <div class="container" style="margin-top:-80px;"><div class="row g-4"><div class="col-md-4"><div class="service-card"><div class="service-icon"><img src="24_часа.png"></div><h3>24 Hours Support</h3><p>We support you all hours of the day</p></div></div><div class="col-md-4"><div class="service-card"><div class="service-icon"><img src="Медалька.png"></div><h3>Qualified Assurance</h3><p>All cars have valid insurance</p></div></div><div class="col-md-4"><div class="service-card"><div class="service-icon"><img src="Мишень.png"></div><h3>GPS on Cars</h3><p>All cars have GPS navigation</p></div></div></div></div>
+</section>
+
+<!-- ======================= ОТЗЫВЫ (КАРУСЕЛЬ, 2 НА СЛАЙД) ======================= -->
+<section class="container my-5 py-4">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><div class="row g-4"><div class="col-md-6"><div class="testimonial-card h-100"><img src="Ellipse 62-2.png" class="avatar"><h4>Kristin Watson</h4><p class="text-warning">Verified Client</p><p class="fst-italic">“Amazing service! Highly recommend Carent.”</p></div></div><div class="col-md-6"><div class="testimonial-card h-100"><img src="Ellipse 62-3.png" class="avatar"><h4>Robert Fox</h4><p class="text-warning">Verified Client</p><p class="fst-italic">“Great experience, transparent prices, excellent cars.”</p></div></div></div></div>
+            <div class="carousel-item"><div class="row g-4"><div class="col-md-6"><div class="testimonial-card h-100"><img src="Ellipse 62-2.png" class="avatar"><h4>Emily Johnson</h4><p class="text-warning">Verified Client</p><p class="fst-italic">“Fast booking, clean cars. Will use again!”</p></div></div><div class="col-md-6"><div class="testimonial-card h-100"><img src="Ellipse 62-3.png" class="avatar"><h4>Michael Lee</h4><p class="text-warning">Verified Client</p><p class="fst-italic">“Professional service, fair price. Five stars!”</p></div></div></div></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+    </div>
+</section>
+
+<!-- ======================= СТАТИСТИКА ======================= -->
+<section class="stats-section"><div class="container"><div class="row text-center gy-4"><div class="col-md-4"><div class="stat-number">450+</div><p>Cars For Rent</p></div><div class="col-md-4"><div class="stat-number">800+</div><p>Happy Clients</p></div><div class="col-md-4"><div class="stat-number">750+</div><p>Rental Locations</p></div></div></div></section>
+
+<!-- ======================= КОНТАКТНАЯ ФОРМА + ACCORDION (FAQ) ======================= -->
+<section class="contact-section">
+    <div class="contact-top-bg"><div class="container"><h2 class="section-title">Contact Us</h2></div></div>
+    <div class="contact-bottom-bg"><div class="container">
+        <div class="contact-card">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <form><div class="mb-3"><input type="text" class="form-control" placeholder="Your Name*" required></div><div class="mb-3"><input type="email" class="form-control" placeholder="Your Email*" required></div><div class="mb-3"><textarea class="form-control" rows="4" placeholder="Your Message" required></textarea></div><button type="submit" class="btn contact-submit">Send A Message</button></form>
+                </div>
+                <div class="col-md-6"><img src="Rectangle 8.jpg" alt="Car renting" class="img-fluid rounded-3 shadow"></div>
+            </div>
+        </div>
+        <p class="text-center text-white-50 mt-4">Need help? Call <span class="contact-phone fw-bold">+1-333-444-5555</span></p>
+        
+        <!-- НОВЫЙ ВИДЖЕТ: ACCORDION (FAQ) -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="bg-dark p-4 rounded-4">
+                    <h3 class="text-white text-center mb-4">❓ Frequently Asked Questions</h3>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What documents do I need to rent a car?</button></h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">You need a valid driver's license, passport, and a credit card for the deposit.</div></div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Is insurance included?</button></h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes, all our cars include comprehensive insurance. Additional coverage is available.</div></div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I cancel my booking for free?</button></h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Free cancellation up to 24 hours before pickup. Later cancellations may incur a fee.</div></div>
+                        </div>
+                    </div>
+                    <!-- DEMO SPINNER (виджет) и кнопка для показа тоста -->
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline-warning" id="demoSpinnerBtn" type="button">
+                            <span id="spinnerDemo" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            Показать ещё FAQ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
+</section>
+
+<!-- ======================= ПОДВАЛ ======================= -->
+<footer class="footer"><div class="container"><div class="row align-items-center text-center text-md-start"><div class="col-md-6 mb-3 mb-md-0"><div class="footer-logo">CARENT</div></div><div class="col-md-6 text-md-end footer-social"><a href="#" data-bs-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" data-bs-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a><a href="#" data-bs-toggle="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a><a href="#" data-bs-toggle="tooltip" title="Telegram"><i class="fab fa-telegram-plane"></i></a><a href="#" data-bs-toggle="tooltip" title="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div></footer>
+
+<!-- MODAL ОКНО -->
+<div class="modal fade" id="loginModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header border-0"><h5 class="modal-title fw-bold">Welcome to Carent</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form><div class="mb-3"><label>Email</label><input type="email" class="form-control" placeholder="name@example.com"></div><div class="mb-3"><label>Password</label><input type="password" class="form-control" placeholder="••••••"></div><button type="submit" class="btn btn-custom-orange w-100">Sign In</button><p class="mt-3 text-center text-muted">No account? <a href="#" class="signup-link">Sign up</a></p></form></div></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Инициализация тултипов
+    const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltips.forEach(t => new bootstrap.Tooltip(t));
+    // Автоматическое закрытие мобильного меню
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => { if (navbarCollapse.classList.contains('show')) new bootstrap.Collapse(navbarCollapse).toggle(); });
+    });
+    // Показать тост при загрузке
+    const toastEl = document.getElementById('welcomeToast');
+    const toast = new bootstrap.Toast(toastEl, { autohide: true, delay: 5000 });
+    toast.show();
+    // Демонстрация Spinner при клике на кнопку (имитация загрузки)
+    const spinnerBtn = document.getElementById('demoSpinnerBtn');
+    const spinner = document.getElementById('spinnerDemo');
+    if (spinnerBtn) {
+        spinnerBtn.addEventListener('click', function(e) {
+            spinner.classList.remove('d-none');
+            spinnerBtn.disabled = true;
+            setTimeout(() => {
+                spinner.classList.add('d-none');
+                spinnerBtn.disabled = false;
+                alert('Дополнительные FAQ в разработке. Спасибо за интерес!');
+            }, 1500);
+        });
+    }
+</script>
+</body>
+</html>
