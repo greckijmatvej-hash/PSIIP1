@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1. Сначала метатеги (важно для правильного отображения кодировки и мобильного масштаба) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Carent – Car Rental Service</title>
+
+    <!-- 2. Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 4. Ваши кастомные стили (в самом конце, чтобы перебивать Bootstrap при необходимости) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- ХЕДЕР И ПЕРВЫЙ ЭКРАН (HEADER & HERO)       -->
+    <!-- ========================================== -->
+    <header class="header">
+        <div class="header-left"></div>
+
+        <!-- Исправленный блок соцсетей на боковой панели по макету image_0a4164.jpg -->
+        <div class="social-bar">
+            <a href="#" class="hero-social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="hero-social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="hero-social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="hero-social-link" aria-label="Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="#" class="hero-social-link" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <nav class="nav">
+    <div class="nav-left">
+        <div class="logo">Carent</div>
+    </div>
+    
+    <button class="burger-menu" id="burgerToggle" aria-label="Открыть меню">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+    </button>
+
+    <div class="nav-right" id="navMenu">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">Cars</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+        <a class="auth" href="#">Login | Sign up</a>
+    </div>
+</nav>
+
+        <section class="hero">
+            <div class="hero-inner container">
+                <div class="hero-left">
+                    <div class="hero-text">
+                        <h1>Enjoy your life with our comfortable cars</h1>
+                        <p>Carent is ready to serve the best experience in car rental.</p>
+                        <button class="btn">Explore Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Main Picture.jpg" alt="Car">
+            </div>
+        </section>
+    </header>
+
+
+    <!-- ========================================== -->
+    <!-- СЕКЦИЯ "О НАС" (ABOUT)                     -->
+    <!-- ========================================== -->
+    <section class="about container">
+        <h2 class="section-title">About Us</h2>
+        
+        <div class="about-content">
+            <div class="about-img-wrapper">
+                <img src="Rectangle 5.jpg" alt="About Us Car" class="about-img">
+            </div>
+            
+            <div class="about-text">
+                <p>
+                    We are a specialized team committed to providing reliable car rental services. 
+                    One of the advantages of renting a car from us is offering competitive and transparent prices. 
+                    By providing services such as comprehensive insurance ......
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- СЕКЦИЯ БРОНИРОВАНИЯ (BOOKING)              -->
+    <!-- ========================================== -->
+    <section class="booking">
+        <h2 class="section-title">Book Now</h2>
+
+        <div class="booking-bg">
+            <div class="container">
+                <form class="booking-grid">
+                    
+                    <div class="input-field location-icon">
+                        <select required>
+                            <option value="" disabled selected hidden>Pickup Location</option>
+                            <option value="airport">Main Airport</option>
+                            <option value="city">City Center</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field date-icon">
+                        <input type="text" placeholder="Pickup Date" 
+                               onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                    </div>
+
+                    <div class="input-field date-icon">
+                        <input type="text" placeholder="Return Date" 
+                               onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                    </div>
+
+                    <div class="input-field car-icon">
+                        <select required>
+                            <option value="" disabled selected hidden>Car Type</option>
+                            <option value="suv">SUV / Jeep</option>
+                            <option value="sedan">Sedan</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field time-icon">
+                        <input type="text" placeholder="Pickup Time" 
+                               onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'">
+                    </div>
+
+                    <div class="input-field time-icon">
+                        <input type="text" placeholder="Return Time" 
+                               onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'">
+                    </div>
+
+                    <button type="submit" class="btn booking-btn">Book Now</button>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- КАТАЛОГ МАШИН (FEATURED CARS)              -->
+    <!-- ========================================== -->
+    <section class="featured container">
+        <h2 class="section-title">Our Featured Cars</h2>
+
+        <div class="cars-grid">
+            <div class="car-card">
+                <img src="Rectangle 6.jpg" alt="Jeep XD" class="car-img">
+                <h3>Jeep XD</h3>
+                <p class="specs">8 seats • Diesel • SUV</p>
+                <div class="car-footer">
+                    <div class="price-block">
+                        <span class="price-label">Daily rate from</span>
+                        <span class="price-value">$200</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="Rectangle 6-1.jpg" alt="Ferrari Enzo" class="car-img">
+                <h3>Ferrari Enzo</h3>
+                <p class="specs">2 seats • Electric • Sedan</p>
+                <div class="car-footer">
+                    <div class="price-block">
+                        <span class="price-label">Daily rate from</span>
+                        <span class="price-value">$340</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="Rectangle 6-2.jpg" alt="Fiat Cooper" class="car-img">
+                <h3>Fiat Cooper</h3>
+                <p class="specs">4 seats • Diesel • Mini coupe</p>
+                <div class="car-footer">
+                    <div class="price-block">
+                        <span class="price-label">Daily rate from</span>
+                        <span class="price-value">$167</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- ПРЕИМУЩЕСТВА И СЕРВИСЫ (SERVICES)          -->
+    <!-- СТИЛЬ СТРОГО ПО КАРТИНКЕ image_4b9b65.png  -->
+    <!-- ========================================== -->
+    <section class="services">
+        <div class="services-top-bg">
+            <div class="container">
+                <h2 class="services-title">Our Premium Services</h2>
+                <p class="services-subtitle">Carent is a reputable car rental company that offers a wide range of useful services for every taste.</p>
+            </div>
+        </div>
+        
+        <div class="services-cards-section">
+            <div class="container">
+                <div class="services-row">
+                    
+                    <!-- Карточка 1 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="24_часа.png" alt="24 Hours Support">
+                        </div>
+                        <h3>24 Hours Support</h3>
+                        <p>We support you all hours of the day,</p>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="Медалька.png" alt="Qualified Assurance">
+                        </div>
+                        <h3>Qualified Assurance</h3>
+                        <p>All cars have a valid insurance.</p>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="Мишень.png" alt="GPS on Cars">
+                        </div>
+                        <h3>GPS on Cars</h3>
+                        <p>All cars are equipped with GPS navigation system.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ОТЗЫВЫ КЛИЕНТОВ (TESTIMONIALS)             -->
+    <!-- ========================================== -->
+    <section class="testimonials container">
+        <h2 class="section-title">What Our Clients Say</h2>
+
+        <div class="testimonials-wrapper">
+            
+            <button type="button" class="arrow-btn arrow-left">
+                <img src="arrow-left.png" alt="Previous">
+            </button>
+
+            <div class="testimonials-grid">
+                <!-- Отзыв 1 -->
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="Ellipse 62-2.png" alt="Kristin Watson" class="testimonial-avatar">
+                        <div class="testimonial-meta">
+                            <h3>Kristin Watson</h3>
+                            <span class="testimonial-status">Verified Client</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">“Amazing service! The car was clean, comfortable, and the rental process was smooth. Highly recommend Carent for everyone!”</p>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="Ellipse 62-3.png" alt="Robert Fox" class="testimonial-avatar">
+                        <div class="testimonial-meta">
+                            <h3>Robert Fox</h3>
+                            <span class="testimonial-status">Verified Client</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">“Great experience. Friendly staff and excellent vehicle selection. The prices are transparent, no hidden fees at all.”</p>
+                </div>
+            </div>
+
+            <button type="button" class="arrow-btn arrow-right">
+                <img src="arrow-right.png" alt="Next">
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- СТАТИСТИКА (STATS) — ПО КАРТИНКЕ image_4a3322.png -->
+    <!-- ========================================== -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                
+                <div class="stat-item">
+                    <span class="stat-number">450+</span>
+                    <p class="stat-desc">Cars For Rent</p>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">800+</span>
+                    <p class="stat-desc">Happy Clients</p>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">750+</span>
+                    <p class="stat-desc">Rental Locations</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ (CONTACT)             -->
+    <!-- ========================================== -->
+    <section class="contact-section">
+        
+        <div class="contact-top-bg">
+            <div class="container">
+                <h2 class="contact-title">Contact Us</h2>
+            </div>
+        </div>
+
+        <div class="contact-bottom-bg">
+            <div class="container">
+                
+                <div class="contact-card">
+                    
+                    <form class="contact-form-wrapper">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email*" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="contact-submit-btn">Send A Message</button>
+                    </form>
+
+                    <div class="contact-image-wrapper">
+                        <img src="Rectangle 8.jpg" alt="Car Renting">
+                    </div>
+
+                </div>
+
+                <p class="contact-footer-phone">
+                    Need help renting a car? Please call <span>+1-333-444-5555</span>
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ПОДВАЛ САЙТА (FOOTER) — ПО МАКЕТУ image_0a4909.png -->
+    <!-- ========================================== -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            
+            <div class="footer-logo">CARENT</div>
+            
+            <div class="footer-socials">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+<script>
+    const burgerToggle = document.getElementById('burgerToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    // Открытие/закрытие меню по клику на бургер
+    burgerToggle.addEventListener('click', () => {
+        burgerToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Автоматическое закрытие меню при клике на любую ссылку внутри панели
+    document.querySelectorAll('.menu a, .auth').forEach(link => {
+        link.addEventListener('click', () => {
+            burgerToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>
